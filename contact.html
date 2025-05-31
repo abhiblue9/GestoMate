@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Contact Us</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+
+    :root {
+      --primary: #6c63ff;
+      --dark-bg: #121212;
+      --dark-text: #e0e0e0;
+      --light-bg: #f5f7fa;
+      --light-text: #333;
+      --input-dark: #1f1f1f;
+      --input-light: #fff;
+      --border-dark: #444;
+      --border-light: #ccc;
+    }
+
+    body {
+      margin: 0;
+      font-family: 'Poppins', sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      padding: 20px;
+      transition: background-color 0.3s, color 0.3s;
+    }
+
+    .container {
+      max-width: 500px;
+      width: 100%;
+      padding: 40px;
+      border-radius: 20px;
+      text-align: center;
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+      transition: background 0.3s, color 0.3s;
+    }
+
+    h2 {
+      font-size: 2.5rem;
+      font-weight: 600;
+      margin-bottom: 30px;
+      color: var(--primary);
+    }
+
+    form input, form textarea {
+      width: 100%;
+      padding: 14px 18px;
+      margin-bottom: 20px;
+      font-size: 1rem;
+      border-radius: 12px;
+      border: 1.5px solid;
+      background: transparent;
+      transition: all 0.3s;
+      font-family: inherit;
+    }
+
+    form input::placeholder, form textarea::placeholder {
+      font-weight: 300;
+    }
+
+    form input:focus, form textarea:focus {
+      outline: none;
+      border-color: var(--primary);
+      box-shadow: 0 0 8px rgba(108, 99, 255, 0.3);
+    }
+
+    button.btn-primary {
+      width: 100%;
+      padding: 15px 0;
+      font-size: 1.1rem;
+      font-weight: 600;
+      color: white;
+      background-color: var(--primary);
+      border: none;
+      border-radius: 30px;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+
+    button.btn-primary:hover {
+      background-color: #574fcf;
+    }
+
+    .btn-back {
+      margin-top: 25px;
+      display: inline-block;
+      padding: 12px 26px;
+      font-size: 1rem;
+      font-weight: 500;
+      color: var(--primary);
+      background: transparent;
+      border: 2px solid var(--primary);
+      border-radius: 25px;
+      cursor: pointer;
+      text-decoration: none;
+      transition: all 0.3s ease;
+    }
+
+    .btn-back:hover {
+      background-color: var(--primary);
+      color: white;
+    }
+
+    /* Light and dark mode adjustments */
+    body.light {
+      background-color: var(--light-bg);
+      color: var(--light-text);
+    }
+
+    body.light .container {
+      background-color: var(--input-light);
+    }
+
+    body.light input, body.light textarea {
+      background-color: var(--input-light);
+      color: var(--light-text);
+      border-color: var(--border-light);
+    }
+
+    body.light input::placeholder, body.light textarea::placeholder {
+      color: #999;
+    }
+
+    body.dark {
+      background-color: var(--dark-bg);
+      color: var(--dark-text);
+    }
+
+    body.dark .container {
+      background-color: var(--input-dark);
+    }
+
+    body.dark input, body.dark textarea {
+      background-color: var(--input-dark);
+      color: var(--dark-text);
+      border-color: var(--border-dark);
+    }
+
+    body.dark input::placeholder, body.dark textarea::placeholder {
+      color: #aaa;
+    }
+
+    @media (max-width: 480px) {
+      h2 {
+        font-size: 2rem;
+      }
+
+      .container {
+        padding: 30px 25px;
+      }
+
+      .btn-back {
+        font-size: 0.95rem;
+        padding: 10px 20px;
+      }
+    }
+  </style>
+  <script>
+    window.onload = () => {
+      const theme = localStorage.getItem('theme') || 'light';
+      document.body.classList.add(theme);
+    };
+  </script>
+</head>
+<body>
+  <section id="contact">
+    <div class="container">
+      <h2>Get in Touch</h2>
+      <form>
+        <input type="text" placeholder="Your Name" required />
+        <input type="email" placeholder="Your Email" required />
+        <textarea placeholder="Your Message" rows="5" required></textarea>
+        <button type="submit" class="btn-primary">Send Message</button>
+      </form>
+      <a href="web.html" class="btn-back">← Back to Home</a>
+    </div>
+  </section>
+</body>
+</html>

@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>GestoMate - Gesture Recognition System</title>
+
+  <meta name="description" content="GestoMate enables gesture recognition and smart home automation using AI and IoT.">
+  <meta name="keywords" content="GestoMate, Gesture, Automation, IoT, ML, Smart Home">
+  <meta name="author" content="GestoMate Team">
+
+  <link rel="icon" href="favicon.ico" type="image/x-icon">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+
+  <style>
+    :root {
+      --primary-color: #007bff;
+      --secondary-color: #17a2b8;
+      --light-bg: #ffffff;
+      --dark-bg: #1c1c1c;
+      --light-text: #212529;
+      --dark-text: #f8f9fa;
+    }
+
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      transition: background 0.4s, color 0.4s;
+    }
+
+    .light-mode {
+      background-color: var(--light-bg);
+      color: var(--light-text);
+    }
+
+    .dark-mode {
+      background-color: var(--dark-bg);
+      color: var(--dark-text);
+    }
+
+    .navbar {
+      padding: 1rem;
+    }
+
+    .navbar-brand {
+      font-size: 1.75rem;
+      font-weight: bold;
+    }
+
+    .theme-toggle span {
+      font-size: 1.5rem;
+      cursor: pointer;
+    }
+
+    header {
+      padding: 5rem 1rem;
+      background: linear-gradient(135deg, #e3f2fd, #bbdefb);
+      text-align: center;
+    }
+
+    .dark-mode header {
+      background: linear-gradient(135deg, #263238, #37474f);
+    }
+
+    header h1 {
+      font-size: 3rem;
+      font-weight: 700;
+    }
+
+    header p {
+      font-size: 1.25rem;
+      margin-bottom: 2rem;
+    }
+
+    .feature-card {
+      border-radius: 20px;
+      padding: 2rem;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+      background-color: #ffffff;
+    }
+
+    .feature-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+    }
+
+    .dark-mode .feature-card {
+      background-color: #2a2a2a;
+    }
+
+    .feature-icon {
+      font-size: 3rem;
+      margin-bottom: 1rem;
+      color: var(--primary-color);
+    }
+
+    .footer {
+      padding: 2rem 1rem;
+      text-align: center;
+      background-color: #f1f1f1;
+    }
+
+    .dark-mode .footer {
+      background-color: #1a1a1a;
+    }
+  </style>
+
+  <script>
+    function toggleTheme() {
+      const body = document.body;
+      const icon = document.getElementById('themeIcon');
+      const isLight = body.classList.toggle('light-mode');
+      body.classList.toggle('dark-mode');
+      localStorage.setItem('theme', isLight ? 'light' : 'dark');
+      icon.textContent = isLight ? '🌞' : '🌙';
+    }
+
+    window.onload = () => {
+      const saved = localStorage.getItem('theme') || 'light';
+      document.body.classList.add(saved + '-mode');
+      const icon = document.getElementById('themeIcon');
+      if (icon) icon.textContent = saved === 'light' ? '🌞' : '🌙';
+    };
+  </script>
+</head>
+
+<body>
+  <nav class="navbar navbar-expand-lg bg-light">
+    <div class="container">
+      <a class="navbar-brand" href="#">GestoMate</a>
+      <div class="ms-auto d-flex align-items-center">
+        <ul class="navbar-nav me-3">
+          <li class="nav-item"><a class="nav-link" href="#features">Features</a></li>
+          <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+          <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+          <li class="nav-item"><a class="nav-link" href="templates/payments.html">Payments</a></li>
+          <li class="nav-item"><a class="nav-link" href="#" id="logoutBtn">Logout</a></li>
+        </ul>
+        <span class="theme-toggle" onclick="toggleTheme()">
+          <span id="themeIcon">🌞</span>
+        </span>
+      </div>
+    </div>
+  </nav>
+
+  <header>
+    <div class="container">
+      <h1>Welcome to GestoMate</h1>
+      <p>Control your home with gestures using AI and IoT</p>
+      <a href="homeautomation.html" class="btn btn-primary btn-lg">Get Started</a>
+    </div>
+  </header>
+
+  <section id="features" class="py-5">
+    <div class="container">
+      <h2 class="text-center mb-4">Features</h2>
+      <div class="row justify-content-center g-4">
+        <div class="col-md-6">
+          <a href="homeautomation.html" class="text-decoration-none text-reset">
+            <div class="feature-card text-center">
+              <div class="feature-icon"><i class="fas fa-home"></i></div>
+              <h4 class="fw-bold">Home Automation</h4>
+              <p>Control your appliances with gestures. Free users limited to 3 devices.</p>
+            </div>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container">
+      <p class="mb-0">&copy; 2025 GestoMate. Made with ❤️ by Team GestoMate.</p>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+    document.getElementById('logoutBtn').addEventListener('click', function (e) {
+      e.preventDefault();
+      localStorage.clear();
+      window.location.href = 'login.html';
+    });
+  </script>
+</body>
+</html>

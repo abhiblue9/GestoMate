@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>About Our Project</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+
+    :root {
+      /* Dark Mode Colors */
+      --dark-bg: #121212;
+      --dark-panel-bg: #1e1e1e;
+      --dark-text: #e0e0e0;
+      --dark-accent: #00e5ff;
+
+      /* Light Mode Colors */
+      --light-bg: #f0f2f5;
+      --light-panel-bg: #ffffff;
+      --light-text: #212121;
+      --light-accent: #0077cc;
+
+      /* Button */
+      --btn-radius: 25px;
+      --transition: 0.3s ease;
+    }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      margin: 0;
+      padding: 50px 20px;
+      background-color: var(--dark-bg);
+      color: var(--dark-text);
+      text-align: center;
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      transition: background-color var(--transition), color var(--transition);
+    }
+
+    body.light-mode {
+      background-color: var(--light-bg);
+      color: var(--light-text);
+    }
+
+    .container {
+      max-width: 800px;
+      padding: 35px 40px;
+      background-color: var(--dark-panel-bg);
+      border-radius: 20px;
+      transition: background-color var(--transition), color var(--transition);
+      user-select: none;
+      box-shadow: none; /* no shadows */
+    }
+
+    body.light-mode .container {
+      background-color: var(--light-panel-bg);
+      color: var(--light-text);
+    }
+
+    h1 {
+      font-size: 2.8rem;
+      margin-bottom: 25px;
+      color: var(--dark-accent);
+      user-select: none;
+      transition: color var(--transition);
+    }
+
+    body.light-mode h1 {
+      color: var(--light-accent);
+    }
+
+    p {
+      font-size: 1.25rem;
+      line-height: 1.7;
+      margin-bottom: 1.8rem;
+      user-select: none;
+    }
+
+    a.btn-primary {
+      display: inline-block;
+      background: linear-gradient(90deg, #00e5ff, #0077cc);
+      color: #fff;
+      padding: 14px 35px;
+      font-size: 1.2rem;
+      font-weight: 600;
+      border-radius: var(--btn-radius);
+      border: none;
+      text-decoration: none;
+      transition: background var(--transition), transform var(--transition);
+      user-select: none;
+      box-shadow: none; /* removed shadow */
+    }
+
+    a.btn-primary:hover {
+      background: linear-gradient(90deg, #0077cc, #00e5ff);
+      transform: translateY(-3px);
+      color: #fff;
+    }
+  </style>
+  <script>
+    window.onload = () => {
+      const savedTheme = localStorage.getItem('theme') || 'dark';
+      document.body.classList.add(savedTheme + '-mode');
+    };
+  </script>
+</head>
+<body>
+  <div class="container">
+    <h1>Gesture Based Smart Home Automation</h1>
+    <p>
+      Imagine a world where gestures speak louder than words! Our project merges IoT and AI to transform hand movements into seamless communication.
+    </p>
+    <p>
+      Whether it’s recognizing Indian alphabets, controlling smart home devices, or enabling real-time speech conversion, we’re redefining interaction.
+    </p>
+    <p>
+      Powered by ESP32 with cloud integration for real-time monitoring, we bring innovation to life. Curious to know more?
+    </p>
+    <a href="web.html" class="btn btn-primary">Discover More</a>
+  </div>
+</body>
+</html>
